@@ -5,12 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = createRoot(document.getElementById("root"));
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App />);
 
 reportWebVitals();
 
-// export { default as Button } from "./components/Modal";
+export { default as Modal } from "./components/Modal/Modal";

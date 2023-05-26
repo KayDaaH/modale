@@ -1,47 +1,47 @@
-import React, { useState } from "react";
 import styles from "./Modal.module.scss";
 
 const Modal = ({
-  message,
+  modalText,
   confirmText,
   cancelText,
-  modalActive,
-  closeModal,
   onConfirm,
   onCancel,
-  backgroundColor,
+  closeModal,
+  backgroundStyle,
   modalStyle,
 }) => {
   const stopPropagation = (event) => {
     event.stopPropagation();
   };
-  backgroundColor = {
-    width: "1000px",
-    height: "200px",
-  };
-  confirmText = "Confirmer"; //bouton
-  cancelText = "Annuler"; //bouton
-  message = "Salut à tous !"; //message modale
 
-  modalActive = true; // true false pour activer la modale ou non
-  // const background = {
-  //   display: modalActive ? "flex" : "none",
-  //   backgroundStyle,
-  // };
-  // modalStyle = {
-  //   width: "1000px",
-  //   height: "200px", // style de la modale
-  // };
+  //message modale
+  modalText = modalText || "Souhaitez-vous valider le formulaire?";
+
+  //Button
+  // onConfirm,
+
+  //Button
+  // onCancel,
+
+  // backgroundStyle
+  backgroundStyle = backgroundStyle || { display: "none" };
+
+  //Text bouton
+  confirmText = confirmText || "Confirmer";
+  //Text bouton
+  cancelText = cancelText || "Annuler";
+
+  // modalStyle
 
   return (
     <div>
-      <div className={styles.main} onClick={closeModal} style={backgroundColor}>
+      <div className={styles.main} onClick={closeModal} style={backgroundStyle}>
         <div
           className={styles.modalContainer}
           onClick={stopPropagation}
           style={modalStyle}
         >
-          <p>{message}</p>
+          <p>{modalText}</p>
           <div className={styles.buttons}>
             <button className={styles.buttonConfirm} onClick={onConfirm}>
               {confirmText}
